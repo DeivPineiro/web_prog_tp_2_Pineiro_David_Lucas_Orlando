@@ -1,4 +1,5 @@
-const elementoCategorias = document.getElementById('divCategorias')
+const elementoCategorias = document.getElementById('divCategorias');
+const elementoBtnPersonajes = document.getElementById('btnPersonajes');
 
 
 //EJEMPLO DE COMO RECORRER UN JSON UTIL PARA LA APP
@@ -35,19 +36,16 @@ fetch(`https://swapi.dev/api/`)
         console.log(json);
 
         elementoCategorias.innerHTML = `<h1>Categorias</h1>`;
-        
+
         //href="index.php?sec=${i} 
 
-        for (var i in json){
+        for (var i in json) {
 
-            if(json.hasOwnProperty(i)){
+            if (json.hasOwnProperty(i)) {
 
                 elementoCategorias.innerHTML = elementoCategorias.innerHTML + ` 
-                
-                
-                
-
-                <div class="col-4 d-block rounded">
+                           
+                <div class="col-4 rounded">
                 
                 <img class="img-fluid rounded border shadow border-dark" src="img/categories/${i}.jpg" alt="categoria">
                 <p class="text-center">${i}</p>
@@ -59,7 +57,7 @@ fetch(`https://swapi.dev/api/`)
 
 
         }
-       
+
 
 
 
@@ -71,21 +69,41 @@ fetch(`https://swapi.dev/api/`)
 
 
 
+    //elementoBtnPersonajes.innerHTML = `<p> Cargando personajes </p>`;
+
+    fetch(`https://swapi.dev/api/people/`)
+    .then((resp) => {
+
+        console.log(resp);
+       
+        return resp.json();
+
+    })
+    .then(function (json) {
+
+        console.log(json);
+
+
+    })
+
+
+    for (let i = 1; i < 10 ; i++) {
+       
+        fetch(`https://swapi.dev/api/people/?page=${i}`)
+            .then((resp) => {
+
+                console.log(resp);
+
+                return resp.json();
+               
+            })
+            .then(function (json) {
+
+                console.log(json.results);
+
+            })
+
+    }
 
 
 
-
-
-
-
-
-cargarCategorias = () => {
-
-
-
-
-
-
-
-
-}
