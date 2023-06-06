@@ -1,7 +1,7 @@
 
 const elementoPlanetas = document.getElementById('divPlanetas');
 
-for (let i = 1; i < 8; i++) {
+for (let i = 1; i < 7; i++) {
 
     fetch(`https://swapi.dev/api/planets/?page=${i}`)
         .then((resp) => {
@@ -27,17 +27,17 @@ for (let i = 1; i < 8; i++) {
 
                 elementoPlanetas.innerHTML = elementoPlanetas.innerHTML + `
                     
-                    <div class = " col-4 "> 
+                    <div class = " col-4 rounded border bg-dark text-light"> 
 
-                    <p class="container text-center mt-5"> ${element.name} </p>
+                    <p class="container text-center mt-2"> ${element.name} </p>
 
-                    <img class = "img-fluid" src = "img/planets/${idPlaneta[5]}.jpg">
+                    <img class = "img-fluid rounded border border-warning shadow mb-2" src = "img/planets/${idPlaneta[5]}.jpg">
 
                     </div>
                                                             
                     `;
 
-
+            
 
             });
 
@@ -46,3 +46,6 @@ for (let i = 1; i < 8; i++) {
         })
 
 }
+
+
+

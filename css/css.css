@@ -1,12 +1,21 @@
-.navBack{
+.navBack {
     background-image: url(../img/css_resources/backNav.png);
     background-position: 210px 390px;
-   background-size: cover;
+    background-size: cover;
 
 }
 
-.white{
+.backBody {
 
-color: whitesmoke;
+    background-image: url(../img/css_resources/backBody.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.white {
+
+    color: whitesmoke;
 
 }

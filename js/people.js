@@ -27,11 +27,11 @@ for (let i = 1; i < 10; i++) {
 
                 elementoPersonajes.innerHTML = elementoPersonajes.innerHTML + `
                     
-                    <div class = " col-4 "> 
+                    <div class = " col-4 col-4 rounded border bg-dark text-light "> 
 
-                    <p class="container text-center mt-5"> ${element.name} </p>
+                    <p class="container text-center mt-2"> ${element.name} </p>
 
-                    <img class = "img-fluid" src = "img/characters/${idPersonaje[5]}.jpg">
+                    <img class = "img-fluid rounded border border-warning shadow mb-2" src = "img/characters/${idPersonaje[5]}.jpg">
 
                     </div>
                                                             
