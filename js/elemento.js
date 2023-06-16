@@ -12,7 +12,7 @@ console.log(tipo)
 
 
 
-elementoElemento.innerHTML = `<p><p class="container text-center mt-5">Conectar estamos, tu fuerza al monitor debes...</p></p>`;
+elementoElemento.innerHTML = `<p class="text-center bg-secondary bg-gradient mt-5">Conectar estamos, tu fuerza al monitor debes...</p>`;
 
 console.log(tipo)
 if (tipo == 1) {
