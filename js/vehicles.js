@@ -1,6 +1,11 @@
 
 const elementoVehiculos = document.getElementById('divVehiculos');
-
+local = (i , x) => {
+   
+    localStorage.setItem("data", i)
+    localStorage.setItem("tipo", x)
+ 
+ }
 for (let i = 1; i < 6; i++) {
 
     fetch(`https://swapi.dev/api/vehicles/?page=${i}`)
@@ -31,7 +36,7 @@ for (let i = 1; i < 6; i++) {
 
                     <p class="container text-center mt-2"> ${element.name} </p>
 
-                    <img class = "img-fluid rounded border border-warning shadow mb-2" src = "img/vehicles/${idVehiculo[5]}.jpg">
+                    <a onclick="local(${idVehiculo[5]}, 5)" href="elemento.html?var=hola"><img alt="${idVehiculo[4]+ "-" +idVehiculo[5]}" class = "img-fluid rounded border border-warning shadow mb-2" src = "img/vehicles/${idVehiculo[5]}.jpg"></a>
 
                     </div>
                                                             

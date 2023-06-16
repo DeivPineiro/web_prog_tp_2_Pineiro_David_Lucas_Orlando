@@ -1,6 +1,13 @@
 
 const elementoNaves = document.getElementById('divNaves');
 
+local = (i , x) => {
+   
+   localStorage.setItem("data", i)
+   localStorage.setItem("tipo", x)
+
+}
+
 for (let i = 1; i < 10; i++) {
 
     fetch(`https://swapi.dev/api/starships/?page=${i}`)
@@ -23,7 +30,7 @@ for (let i = 1; i < 10; i++) {
 
                 var idNave = cadena.split("/");
 
-                //console.log(idNave);
+                console.log(idNave);
 
                 elementoNaves.innerHTML = elementoNaves.innerHTML + `
                     
@@ -31,7 +38,7 @@ for (let i = 1; i < 10; i++) {
 
                     <p class="container text-center mt-2"> ${element.name} </p>
 
-                    <img class = "img-fluid rounded border border-warning shadow mb-2" src = "img/starships/${idNave[5]}.jpg">
+                    <a onclick="local(${idNave[5]}, 6)" href="elemento.html?var=hola"><img alt="${idNave[4]+ "-" +idNave[5]}" class = "img-fluid rounded border border-warning shadow mb-2" src = "img/starships/${idNave[5]}.jpg"></a>
 
                     </div>
                                                             

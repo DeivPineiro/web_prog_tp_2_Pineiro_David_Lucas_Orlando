@@ -26,7 +26,7 @@ fetch(`https://swapi.dev/api/`)
 
                 elementoCategorias.innerHTML = elementoCategorias.innerHTML + ` 
                            
-                <div class="col-4 rounded text-light ">
+                <div class="col-6 col-md-4 rounded text-light ">
                 
                 <a href = "${i}.html"><img class="img-fluid rounded shadow border border-warning" src="img/categories/${i}.jpg" alt="categoria"></a>
                 <p class="text-center">${i}</p>

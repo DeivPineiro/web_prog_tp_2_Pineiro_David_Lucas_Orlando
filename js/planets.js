@@ -1,7 +1,14 @@
 
 const elementoPlanetas = document.getElementById('divPlanetas');
 
-for (let i = 1; i < 7; i++) {
+local_planeta = (i , x) => {
+   
+    localStorage.setItem("data", i)
+    localStorage.setItem("tipo", x)
+ 
+ }
+
+for (let i = 1; i < 6; i++) {
 
     fetch(`https://swapi.dev/api/planets/?page=${i}`)
         .then((resp) => {
@@ -31,9 +38,18 @@ for (let i = 1; i < 7; i++) {
 
                     <p class="container text-center mt-2"> ${element.name} </p>
 
-                    <img class = "img-fluid rounded border border-warning shadow mb-2" src = "img/planets/${idPlaneta[5]}.jpg">
+                    
 
+                   
+
+                 
+                    <a onclick="local_planeta(${idPlaneta[5]}, 2)" href="elemento.html?var=hola"><img alt="${idPlaneta[4]+ "-" +idPlaneta[5]}" class = "img-fluid rounded border border-warning shadow mb-2" src = "img/planets/${idPlaneta[5]}.jpg"></a>
+                    
                     </div>
+
+                   
+
+
                                                             
                     `;
 
