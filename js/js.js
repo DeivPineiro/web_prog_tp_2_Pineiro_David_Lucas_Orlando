@@ -1,5 +1,10 @@
 const elementoCategorias = document.getElementById('divCategorias');
 
+if(localStorage.getItem('favoritos')==null){
+var favoritos = []
+localStorage.setItem('favoritos', JSON.stringify(favoritos))
+console.log(localStorage.getItem('favoritos'))
+}
 elementoCategorias.innerHTML = `<div class="container text-center mt-5"><p>Si esperar tu puedes, categorias ver pronto...</p></div>`;
 
 fetch(`https://swapi.dev/api/`)

@@ -1,26 +1,41 @@
 const elementoElemento = document.getElementById('divElemento');
 
-console.log(localStorage.getItem("data"))
-console.log(localStorage.getItem("tipo"))
 
 var data = localStorage.getItem("data")
 var tipo = localStorage.getItem("tipo")
 var planeta
 
-console.log(tipo)
 
+
+favorito = (i) => {
+  
+
+ 
+ console.log(i)
+ var array = JSON.parse(localStorage.getItem('favoritos'))
+ console.log(array)
+ 
+ array.push(i)
+ localStorage.setItem('favoritos', JSON.stringify(array))
+
+
+
+
+
+ 
+
+}
 
 
 
 elementoElemento.innerHTML = `<p class="text-center bg-secondary bg-gradient mt-5">Conectar estamos, tu fuerza al monitor debes...</p>`;
 
-console.log(tipo)
+
 if (tipo == 1) {
 
   fetch(`https://swapi.dev/api/people/${data}`)
     .then((resp) => {
 
-      //console.log(resp);
 
       return resp.json();
 
@@ -31,7 +46,7 @@ if (tipo == 1) {
 
       cadena = JSON.stringify(json.homeworld)
       var idPlaneta = cadena.split("/")
-      console.log(idPlaneta)
+
 
       fetch(`${json.homeworld}`)
         .then((respuesta) => {
@@ -52,7 +67,7 @@ if (tipo == 1) {
 
 
           elementoElemento.innerHTML = `
-      
+
       <h1 class="bg-dark text-center text-light">${json.name}</h1>
 
 <div class="card mb-3 m-auto mt-5 bg-dark text-light" style="max-width: 1000px;">
@@ -73,16 +88,20 @@ if (tipo == 1) {
   <li class="list-group-item">Genero: ${json.gender}</li>
   <li class="list-group-item">Planeta origen: ${j.name}</li>
   <li class="list-group-item"><img class="img-fluid d-block m-auto border border-warning shadow" style="max-width:110px" src="img/planets/${idPlaneta[5]}.jpg" alt="planeta"></li>
-
+  
   
       </ul>
-
+      <a href="favoritos.html" class="btn btn-primary stretched-link mt-2" onclick="favorito('${json.url}')">Agregar a favoritos</a>
     </div>
   </div>
 </div>
+
+
+                    
+
 </div>
-      
-      
+
+
       
       
       `;
@@ -92,7 +111,7 @@ if (tipo == 1) {
 
 
 }
-
+//onclick="favorito(${fav})
 
 if (tipo == 2) {
 
@@ -136,7 +155,7 @@ if (tipo == 2) {
 
   
       </ul>
-
+      <a href="favoritos.html" class="btn btn-primary stretched-link mt-2" onclick="favorito('${json.url}')">Agregar a favoritos</a>
     </div>
   </div>
 </div>
@@ -195,7 +214,7 @@ if (tipo == 3) {
   
     
         </ul>
-  
+        <a href="favoritos.html" class="btn btn-primary stretched-link mt-2" onclick="favorito('${json.url}')">Agregar a favoritos</a>
       </div>
     </div>
   </div>
@@ -279,7 +298,7 @@ if (tipo == 4) {
     
       
           </ul>
-    
+          <a href="favoritos.html" class="btn btn-primary stretched-link mt-2" onclick="favorito('${json.url}')">Agregar a favoritos</a>
         </div>
       </div>
     </div>
@@ -341,7 +360,7 @@ if (tipo == 5) {
   
     
         </ul>
-  
+        <a href="favoritos.html" class="btn btn-primary stretched-link mt-2" onclick="favorito('${json.url}')">Agregar a favoritos</a>
       </div>
     </div>
   </div>
@@ -405,7 +424,7 @@ if (tipo == 6) {
   
     
         </ul>
-  
+        <a href="favoritos.html" class="btn btn-primary stretched-link mt-2" onclick="favorito('${json.url}')">Agregar a favoritos</a>
       </div>
     </div>
   </div>
